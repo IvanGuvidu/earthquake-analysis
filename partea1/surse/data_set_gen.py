@@ -46,5 +46,6 @@ def data_set_gen():
         for i in range(1, x + 1): # alteram x%% (la mie) date
             j = random.randint(0, n - 1)
             df.loc[j, col] = np.nan
+    print(df.describe())
     df.to_csv('../date/cutremure.csv', index = False)
     return df
