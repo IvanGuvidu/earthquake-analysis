@@ -4,6 +4,7 @@ import random
 
 def data_set_gen():
     np.random.seed(0) # pentru a avea consistente datele, pentru full random, scoatem aceasta linie
+    random.seed(0)
     n = 1000
     zi = np.random.randint(1, 30, n)
     latitudine = np.random.uniform(0, 90, n)
