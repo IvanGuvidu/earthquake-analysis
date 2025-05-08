@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 import seaborn as sns
 
 def plot_histograms(df):
@@ -19,7 +18,7 @@ def plot_countplot(df):
 
 def plot_coordinates(df):
     sns.scatterplot(data = df, x = 'longitudine', y = 'latitudine', hue = 'magnitudine')
-    plt.title('Coordonatele cutremurelor')
+    plt.title('Coordonatele cutremurelor si intensitatea lor')
     plt.xlabel('Longitudine')
     plt.ylabel('Latitudine')
     plt.legend(title='Magnitudine', loc = 'upper right')
@@ -51,6 +50,13 @@ def violin_plot(df):
     plt.savefig('../date/grafice/violin_plot.png')
     plt.close()
 
+def plot_corr(df):
+    corr = df.select_dtypes(include=[np.number]).corr()
+    sns.heatmap(corr, annot = True, cmap = 'coolwarm', fmt = '.2f')
+    plt.title('Matricea de corelatie')
+    plt.savefig('../date/grafice/matrice_corelatie.png')
+    plt.close()
+
 def grafice(df):
     plot_histograms(df)
     plot_countplot(df)
@@ -58,3 +64,4 @@ def grafice(df):
     plot_zile_replici_intensitate(df)
     plot_ult_magnitudine_placa(df)
     violin_plot(df)
+    plot_corr(df)

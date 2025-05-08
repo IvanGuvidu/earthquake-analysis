@@ -8,8 +8,8 @@ def data_set_gen():
     n = 1000
     zi = np.random.randint(1, 30, n)
     latitudine = np.random.uniform(0, 90, n)
-    longitudine = np.random.uniform(0, 180, n)
-    adancime_epicentru = np.random.uniform(50, 100, n)
+    longitudine = np.random.normal(0, 180, n)
+    adancime_epicentru = np.random.normal(50, 100, n)
     tip_placa = np.random.choice(['convergenta', 'divergenta', 'transformare'], n, p = [0.4, 0.2, 0.4])
     replici = np.random.randint(1, 10, n)
     magnitudine_ultimul = np.random.uniform(1.5, 9, n)
@@ -28,7 +28,8 @@ def data_set_gen():
         if magnitudine[i] < 2.0:
             magnitudine[i] = 2.0
         if magnitudine[i] > 9.0:
-            magnitudine[i] = 9.0 
+            magnitudine[i] = 9.0
+    magnitudine += np.random.normal(0, 0.3, n)
     df = pd.DataFrame({
         'zi' : zi,
         'longitudine': longitudine,
@@ -39,8 +40,9 @@ def data_set_gen():
         'magnitudine ultimul' : magnitudine_ultimul.round(1),
         'magnitudine' : magnitudine.round(1),
     })
+    print(df.dtypes)
     for col in df.columns:
-        if col == 'magntidude':
+        if col == 'magnitudine':
             continue
         x = random.randint(0, 100)
         for i in range(1, x + 1): # alteram x%% (la mie) date
