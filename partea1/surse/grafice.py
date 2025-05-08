@@ -54,6 +54,7 @@ def plot_corr(df):
     corr = df.select_dtypes(include=[np.number]).corr()
     sns.heatmap(corr, annot = True, cmap = 'coolwarm', fmt = '.2f')
     plt.title('Matricea de corelatie')
+    plt.tight_layout()
     plt.savefig('../date/grafice/matrice_corelatie.png')
     plt.close()
 
