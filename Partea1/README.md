@@ -26,7 +26,7 @@ Setul de date va fi generat aleator. Datele vor fi generate folosind distribuți
 * Adâncimea epicentrului va fi cuprinsă între $50$ și $100$ km.
 * Plăcile pot fi: **divergente, convergente** sau **de transformare**.
 * Ultime magnitudini vor fi cuprinse între $1.5$ și $9$.
-* Magnitudinile vor fi calculate conform formulei: $2 \ +$ un număr random între $0$ și $3$ în funcție de tipul plăcii $- \ 0.2 \times ($ magnitudine ultimul $- \  2) \ + \ 0.1 \times$ replici $+ \ 0.025 \times $ adâncime. Ne asigurăm la final că magnitudinea este cuprinsă între $2$ și $9$.
+* Magnitudinile vor fi calculate conform formulei: $2 \ +$ un număr random între $0$ și $3$ în funcție de tipul plăcii $- \ 0.2 \times ($ magnitudine ultimul $- \  2) \ + \ 0.1 \times$ replici $+ \ 0.025$ × adâncime. Ne asigurăm la final că magnitudinea este cuprinsă între $2$ și $9$.
 
 La final, vom alege un procent aleator între $0\%$ și $10\%$ de valori din fiecare coloană pentru a le elimina.
 
